@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Hitsteps Ultimate Web Analytics
+Plugin Name: Hitsteps Blog Analytics & Live Chat
 Plugin URI: http://www.hitsteps.com/
 Description: Hitsteps is a free powerful real time website visitor manager, it allow you to view and interact with your visitors in real time.
 Author: hitsteps
@@ -318,7 +318,7 @@ $postaction='';
 	if ( $option['code']=='' && $postaction!='do' && $_REQUEST['hitmagic']!='do' ) {
 		function hitsteps_warning() {
 			echo "
-			<div id='hitsteps-warning' class='updated fade'><p><strong>".__('hitsteps is almost ready.')."</strong> ".sprintf(__('You must <a href="%1$s">enter your hitsteps API key</a> to start tracking your stats.'), "options-general.php?page=hitsteps-visitor-manager/hitsteps.php")."</p></div>
+			<div id='hitsteps-warning' class='updated fade'><p><strong>".__('hitsteps is almost ready.')."</strong> ".sprintf(__('You must <a href="%1$s">enter your hitsteps API key</a> to start tracking your stats.'), "options-general.php?page=hitsteps-blog-analytics-live-chat/hitsteps.php")."</p></div>
 			";
 
 		}
@@ -1705,8 +1705,8 @@ add_action('widgets_init', create_function('', 'return register_widget("hst_STAT
 	# add "Settings" link to plugin on plugins page
 	add_filter('plugin_action_links', 'hitsteps_settingsLink', 0, 2);
 	function hitsteps_settingsLink($actionLinks, $file) {
- 		if (($file == 'hitsteps-visitor-manager/hitsteps.php') && function_exists('admin_url')) {
-			$settingsLink = '<a href="' . admin_url('options-general.php?page=hitsteps-visitor-manager/hitsteps.php') . '">' . __('Settings') . '</a>';
+ 		if (($file == 'hitsteps-blog-analytics-live-chat/hitsteps.php') && function_exists('admin_url')) {
+			$settingsLink = '<a href="' . admin_url('options-general.php?page=hitsteps-blog-analytics-live-chat/hitsteps.php') . '">' . __('Settings') . '</a>';
 
 			# Add 'Settings' link to plugin's action links
 			array_unshift($actionLinks, $settingsLink);
